@@ -56,28 +56,22 @@ var zucchine = [
 ];
 
 // divido le zucchine in due arrey differenti in base alla loro lunghezza
+// sommo il peso delle zucchine da 15cm in su
+// sommo il peso delle zucchine da 14cm in giù
 var zucchineLunghe = [];
 var zucchineCorte = [];
+var sommaGrandi = 0;
+var sommaPiccole = 0;
 for ( var i = 0; i < zucchine.length; i++ ){
     if ( zucchine[i].lunghezza >= 15 ){
         zucchineLunghe.push(zucchine[i]);
+        var zucchinaPeso = zucchine[i].peso;
+        sommaGrandi += zucchinaPeso;
     } else {
         zucchineCorte.push(zucchine[i]);
+        var zucchinaPeso = zucchine[i].peso;
+        sommaPiccole += zucchinaPeso;
     }
 }
-
-// sommo il peso delle zucchine da 15cm in su
-var somma = 0;
-for ( var i = 0; i < zucchineLunghe.length; i++ ){
-    var zucchinaPeso = zucchineLunghe[i].peso;
-    somma += zucchinaPeso;
-}
-console.log('Le zucchine lunghe da 15cm in su pesano in totale: ' + somma);
-
-// sommo il peso delle zucchine da 14cm in giù
-var somma = 0;
-for ( var i = 0; i < zucchineCorte.length; i++ ){
-    var zucchinaPeso = zucchineCorte[i].peso;
-    somma += zucchinaPeso;
-}
-console.log('Le zucchine lunghe da 14cm in giù pesano in totale: ' + somma);
+console.log('Le zucchine lunghe da 15cm in su pesano in totale: ' + sommaGrandi);
+console.log('Le zucchine lunghe da 14cm in giù pesano in totale: ' + sommaPiccole);
