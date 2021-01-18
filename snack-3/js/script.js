@@ -65,12 +65,10 @@ var sommaPiccole = 0;
 for ( var i = 0; i < zucchine.length; i++ ){
     if ( zucchine[i].lunghezza >= 15 ){
         zucchineLunghe.push(zucchine[i]);
-        var zucchinaPeso = zucchine[i].peso;
-        sommaGrandi += zucchinaPeso;
+        sommaGrandi += zucchine[i].peso;;
     } else {
         zucchineCorte.push(zucchine[i]);
-        var zucchinaPeso = zucchine[i].peso;
-        sommaPiccole += zucchinaPeso;
+        sommaPiccole += zucchine[i].peso;;
     }
 }
 console.log('Le zucchine lunghe da 15cm in su pesano in totale: ' + sommaGrandi);
